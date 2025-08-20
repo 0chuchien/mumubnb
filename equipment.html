@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MUMU | 木木民宿</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="intro">
+      <img id="logo" src="./pics/logo小.svg" alt="木木民宿 Logo" />
+    </div>
+
+    <nav class="navbar">
+      <div class="logo2">
+        <a href="#"> <img src="./pics/logo小.svg" alt="logo" /></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="./index.html">首頁</a></li>
+        <li><a href="./room.html">空間介紹</a></li>
+        <li><a class="active" href="#">設施總覽</a></li>
+        <li><a href="./index.html#traffic123">交通與週邊</a></li>
+        <div class="line"></div>
+        <li><a href="./notice.html">訂房須知</a></li>
+        <li class="box"><a href="./book.html">預訂/價格</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+    <!-- 全螢幕覆蓋選單 -->
+    <div id="fullMenu" class="full-menu">
+      <button id="closeMenu" class="close-button">✕</button>
+      <ul class="menu-list">
+        <li><a href="#">首頁</a></li>
+        <li><a href="./room.html">空間介紹</a></li>
+        <li><a href="./equipment.html">設施總覽</a></li>
+        <li><a href="./index.html#traffic123">交通與週邊</a></li>
+        <li><a href="./notice.html">訂房須知</a></li>
+        <li><a href="./book.html">預訂/價格</a></li>
+      </ul>
+    </div>
+
+    <section class="equipment-title">
+      <h2>設施總覽</h2>
+      <p>提供舒適完善的設備，讓您自在享受每段旅程。</p>
+    </section>
+
+    <section class="equipment-category">
+      <h3>客房設施</h3>
+      <ul>
+        <li>TOTO 浴缸</li>
+        <li>TOTO 免治馬桶</li>
+        <li>TOTO 暖房乾燥空調設備</li>
+        <li>Dyson 吹風機</li>
+        <li>獨立陽台</li>
+      </ul>
+    </section>
+
+    <section class="equipment-category">
+      <h3>開放式廚房</h3>
+      <ul>
+        <li>IH爐（2口）</li>
+        <li>冰溫熱飲水機（含氣泡水）</li>
+        <li>冰箱</li>
+        <li>蒸烤爐</li>
+        <li>氣炸鍋</li>
+        <li>電子鍋</li>
+        <li>洗碗機</li>
+        <li>烘碗機</li>
+      </ul>
+    </section>
+
+    <section class="equipment-category">
+      <h3>室內交誼空間</h3>
+      <ul>
+        <li>KTV音響</li>
+        <li>投影設備</li>
+        <li>自動麻將桌</li>
+        <li>大片落地窗與寬敞空間</li>
+      </ul>
+    </section>
+
+    <section class="equipment-category">
+      <h3>餐客廳</h3>
+      <ul>
+        <li>大餐桌</li>
+        <li>沙發區</li>
+        <li>電視</li>
+        <li>大片落地窗景觀</li>
+      </ul>
+    </section>
+
+    <section class="equipment-category">
+      <h3>戶外設施</h3>
+      <ul>
+        <li>草坪區</li>
+        <li>烤肉區</li>
+        <li>停車場</li>
+        <li>CCS2 電動車充電樁</li>
+      </ul>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <img class="smalllogo" src="./pics/logo小.svg" alt="logo" />
+        <div class="footer-logo">MUMU 木木民宿</div>
+        <div class="footer-info">
+          <p>宜蘭縣民宿2434號</p>
+          <p>地址：宜蘭縣冬山鄉東八路110號</p>
+          <p>聯絡信箱：mumu269030@gmail.com</p>
+          <p>
+            官方Line：<a href="https://lin.ee/94RJiiC" target="_blank"
+              >@160ajblq</a
+            >
+          </p>
+        </div>
+        <div class="footer-copy">&copy; 2025 MUMU 木木民宿. 保留所有權利。</div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger");
+        const fullMenu = document.getElementById("fullMenu");
+        const closeBtn = document.getElementById("closeMenu");
+
+        function openMenu() {
+          fullMenu.classList.add("active");
+          document.body.classList.add("no-scroll");
+        }
+
+        function closeMenu() {
+          fullMenu.classList.remove("active");
+          document.body.classList.remove("no-scroll");
+        }
+
+        hamburger.addEventListener("click", openMenu);
+        closeBtn.addEventListener("click", closeMenu);
+      });
+    </script>
+  </body>
+</html>

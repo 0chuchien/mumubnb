@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MUMU | 木木民宿</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <!-- 中文語系 -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh.js"></script>
+    <!-- JS 主程式 -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  </head>
+  <body>
+    <div class="intro">
+      <img id="logo" src="./pics/logo小.svg" alt="木木民宿 Logo" />
+    </div>
+
+    <nav class="navbar">
+      <div class="logo2">
+        <a href="#"> <img src="./pics/logo小.svg" alt="logo" /></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="./index.html">首頁</a></li>
+        <li><a href="./room.html">空間介紹</a></li>
+        <li><a href="./equipment.html">設施總覽</a></li>
+        <li><a href="./index.html#traffic123">交通與週邊</a></li>
+        <div class="line"></div>
+        <li><a href="./notice.html">訂房須知</a></li>
+        <li class="box"><a class="active" href="#">預訂/價格</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+    <!-- 全螢幕覆蓋選單 -->
+    <div id="fullMenu" class="full-menu">
+      <button id="closeMenu" class="close-button">✕</button>
+      <ul class="menu-list">
+        <li><a href="#">首頁</a></li>
+        <li><a href="./room.html">空間介紹</a></li>
+        <li><a href="./equipment.html">設施總覽</a></li>
+        <li><a href="./index.html#traffic123">交通與週邊</a></li>
+        <li><a href="./notice.html">訂房須知</a></li>
+        <li><a href="./book.html">預訂/價格</a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <section class="section">
+        <h1>包棟費用與說明</h1>
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>專案</th>
+              <th>平日<br /><small>（週日～週四）</small></th>
+              <th>旺日<br /><small>（週五、週日）</small></th>
+              <th>假日<br /><small>（週六、暑假、國定假日）</small></th>
+              <th>定價<br /><small>（春節、跨年）</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>標準包棟</td>
+              <td>28,800</td>
+              <td>32,800</td>
+              <td>36,800</td>
+              <td>68,800</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="price-note">
+          <h3>1.連續入住第 2 晚 9 折，第 3 晚起 85 折。</h3>
+
+          <h3>2.跨年、春節須全額付款。</h3>
+          <h3>
+            3.另提供平日12人以下連住小包棟優惠，若有需求歡迎洽詢LINE官方客服。
+          </h3>
+          <br />
+          <p>*無提供加床服務</p>
+          <p>*續住不提供更換床包、毛巾等房務清潔。</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>請使用 LINE 官方帳號預訂</h2>
+
+        <a
+          href="https://line.me/R/ti/p/yourLineID"
+          class="button"
+          target="_blank"
+          >加入 LINE 預訂</a
+        >
+      </section>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <img class="smalllogo" src="./pics/logo小.svg" alt="logo" />
+        <div class="footer-logo">MUMU 木木民宿</div>
+        <div class="footer-info">
+          <p>宜蘭縣民宿2434號</p>
+          <p>地址：宜蘭縣冬山鄉東八路110號</p>
+          <p>聯絡信箱：mumu269030@gmail.com</p>
+          <p>
+            官方Line：<a href="https://lin.ee/94RJiiC" target="_blank"
+              >@160ajblq</a
+            >
+          </p>
+        </div>
+        <div class="footer-copy">&copy; 2025 MUMU 木木民宿. 保留所有權利。</div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger");
+        const fullMenu = document.getElementById("fullMenu");
+        const closeBtn = document.getElementById("closeMenu");
+
+        function openMenu() {
+          fullMenu.classList.add("active");
+          document.body.classList.add("no-scroll");
+        }
+
+        function closeMenu() {
+          fullMenu.classList.remove("active");
+          document.body.classList.remove("no-scroll");
+        }
+
+        hamburger.addEventListener("click", openMenu);
+        closeBtn.addEventListener("click", closeMenu);
+      });
+    </script>
+    <script>
+      flatpickr("#dateRangePicker", {
+        mode: "range",
+        locale: "zh",
+        dateFormat: "Y-m-d",
+        minDate: "today",
+        showMonths: 2,
+        onChange: function (selectedDates, dateStr, instance) {
+          console.log("選擇的日期區間：", dateStr);
+        },
+      });
+    </script>
+  </body>
+</html>

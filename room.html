@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MUMU | 木木民宿</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+ 
+    <body>
+      <div class="intro">
+        <img id="logo" src="./pics/logo小.svg" alt="木木民宿 Logo" />
+      </div>
+  
+      <nav class="navbar">
+        <div class="logo2">
+          <a href="#"> <img src="./pics/logo小.svg" alt="logo" /></a>
+        </div>
+        <ul class="nav-links">
+          <li><a  href="./index.html">首頁</a></li>
+          <li><a class="active" href="#">空間介紹</a></li>
+          <li><a href="./equipment.html">設施總覽</a></li>
+          <li><a href="./index.html#traffic123">交通與週邊</a></li>
+          <div class="line"></div>
+          <li><a href="./notice.html">訂房須知</a></li>
+          <li class="box"><a href="./book.html">預訂/價格</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+      </nav>
+      <section class="room1">
+        <div class="room-bg"></div>
+        <div class="room-content">
+          <h3>房型與公共空間</h3>
+          <h4>
+            六間客房各具光影與景色，融合清水模與木質元素，靜謐溫暖。配備浴缸、免治馬桶、Dyson 吹風機、陽台與暖房乾燥空調。戶外草地與採光良好的公共空間，無論獨處或相聚，都能自在享受每段時光。
+          </h4>
+        </div>
+      </section >
+      <section id="roomA" class="room-section">
+        <ul class="room-nav">
+          <li ><a href="#roomA">雙人房</a></li>
+          <li ><a href="#roomB">四人房</a></li>
+          <li ><a href="#roomC">開放式廚房</a></li>
+          <li ><a href="#roomD">餐客廳</a></li>
+          <li ><a href="#roomE">室內交誼空間</a></li>
+          <li ><a href="#roomF">室外空間</a></li>
+        </ul>      
+       
+      <div class="room-block">
+        <div class="room-info">
+          <!-- 文字資訊欄 -->
+          <div class="room-text">
+            <h2>雙人房</h2>
+            <h3>21-22m<sup>2</sup></h3>
+            <ul>
+              <li><span>床型｜</span><span>標準雙人床</span></li>
+              <li><span>房間數｜</span><span>3 間</span>
+              </li>
+              <li><span>寢具｜</span><span>羽絨被、羽毛枕</span>
+              </li>
+              <li>
+                <br /><span>設施｜</span><br /><span
+                  >TOTO 浴缸／免治馬桶／暖房乾燥空調  <br/>
+                  DYSON 吹風機  <br/>
+                  獨立陽台</span
+                >
+              </li>
+              <li class="ps">其中一間位於一樓（無浴缸）方便不便爬樓梯的旅客使用。</li>
+            </ul>
+            <div class="btn-group">
+              <a href="./book.html">包棟費用與說明</a>
+            </div>
+          </div>
+  
+          <!-- 圖片輪播 -->
+          <div class="room-slider">
+            <div class="slider-track">
+              <img
+                src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_1.jpg"
+                alt="房型1"
+              />
+              <img
+                src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_2.jpg"
+                alt="房型2"
+              />
+            </div>
+            <div class="slider-nav">
+              <button onclick="prevSlide()">❮</button>
+              <button onclick="nextSlide()">❯</button>
+            </div>
+            <div class="slider-dots" ></div>
+          </div>
+        </div>
+      </div>
+     
+      </section>
+     
+      <section id="roomB" class="room-section">
+       
+        <ul class="room-nav">
+          <li ><a href="#roomA">雙人房</a></li>
+          <li ><a href="#roomB">四人房</a></li>
+          <li ><a href="#roomC">開放式廚房</a></li>
+          <li ><a href="#roomD">餐客廳</a></li>
+          <li ><a href="#roomE">室內交誼空間</a></li>
+          <li ><a href="#roomF">室外空間</a></li>
+        </ul>      
+        <div class="room-info">
+          <!-- 文字資訊欄 -->
+          <div class="room-text">
+            <h2>四人房</h2>
+            <h3>38-39m<sup>2</sup></h3>
+            <ul>
+              <li><span>床型｜</span><span>標準雙人床</span></li>
+              <li><span>房間數｜</span><span>3 間</span></li>
+              <li><span>寢具｜</span><span>羽絨被、羽毛枕</span></li>
+              <li>
+                <br /><span>設施｜</span><br /><span
+                  >TOTO 浴缸／免治馬桶／暖房乾燥空調  <br/>
+                  DYSON 吹風機  <br/>
+                  獨立陽台</span
+                >
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./book.html">包棟費用與說明</a>
+            </div>
+          </div>
+  
+          <!-- 圖片輪播 -->
+          <div class="room-slider">
+            <div class="slider-track" >
+              <img
+                src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_1.jpg"
+                alt="房型1"
+              />
+              <img
+                src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_2.jpg"
+                alt="房型2"
+              />
+            </div>
+            <div class="slider-nav">
+              <button onclick="prevSlide()">❮</button>
+              <button onclick="nextSlide()">❯</button>
+            </div>
+            <div class="slider-dots" ></div>
+          </div>
+        </div>
+      </div>
+       <!-- 全螢幕覆蓋選單 -->
+       <div id="fullMenu" class="full-menu">
+        <button id="closeMenu" class="close-button">✕</button>
+        <ul class="menu-list">
+          <li><a href="./index.html">首頁</a></li>
+          <li><a href="#">空間介紹</a></li>
+          <li><a href="./equipment.html">設施總覽</a></li>
+          <li><a href="./index.html#traffic123">交通與週邊</a></li>
+          <li><a href="./notice.html">訂房須知</a></li>
+          <li><a href="./book.html">立即預訂</a></li>
+        </ul>
+      </div>
+      </section>
+      <section id="roomC" class="room-section">
+       
+        <ul class="room-nav">
+          <li ><a href="#roomA">雙人房</a></li>
+          <li ><a href="#roomB">四人房</a></li>
+          <li ><a href="#roomC">開放式廚房</a></li>
+          <li ><a href="#roomD">餐客廳</a></li>
+          <li ><a href="#roomE">室內交誼空間</a></li>
+          <li ><a href="#roomF">室外空間</a></li>
+        </ul>      
+        <div class="room-info">
+          <!-- 文字資訊欄 -->
+          <div class="room-text">
+            <h2>開放式廚房</h2>
+            
+            <ul>
+              <li><span>IH爐｜</span><span>2口</span></li>
+              <li><span>淨水器｜</span><span>冰溫熱（氣泡水）飲水機</span></li>
+              <li>
+                <br /> <span>設備｜</span><br /><span
+                  >冰箱、蒸烤爐、氣炸鍋、電子鍋、洗碗機、烘碗機</span
+                >
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./book.html">包棟費用與說明</a>
+            </div>
+          </div>
+  
+          <!-- 圖片輪播 -->
+          <div class="room-slider">
+            <div class="slider-track" >
+              <img
+                src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_1.jpg"
+                alt="房型1"
+              />
+              <img
+                src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_2.jpg"
+                alt="房型2"
+              />
+            </div>
+            <div class="slider-nav">
+              <button onclick="prevSlide()">❮</button>
+              <button onclick="nextSlide()">❯</button>
+            </div>
+            <div class="slider-dots" ></div>
+          </div>
+        </div>
+      </div>
+       <!-- 全螢幕覆蓋選單 -->
+       <div id="fullMenu" class="full-menu">
+        <button id="closeMenu" class="close-button">✕</button>
+        <ul class="menu-list">
+          <li><a href="./index.html">首頁</a></li>
+          <li><a href="#">空間介紹</a></li>
+          <li><a href="./equipment.html">設施總覽</a></li>
+          <li><a href="./index.html#traffic123">交通與週邊</a></li>
+          <li><a href="./notice.html">訂房須知</a></li>
+          <li><a href="./book.html">立即預訂</a></li>
+        </ul>
+      </div>
+      </section>
+      <section id="roomD" class="room-section">
+       
+        <ul class="room-nav">
+          <li ><a href="#roomA">雙人房</a></li>
+          <li ><a href="#roomB">四人房</a></li>
+          <li ><a href="#roomC">開放式廚房</a></li>
+          <li ><a href="#roomD">餐客廳</a></li>
+          <li ><a href="#roomE">室內交誼空間</a></li>
+          <li ><a href="#roomF">室外空間</a></li>
+        </ul>      
+        <div class="room-info">
+          <!-- 文字資訊欄 -->
+          <div class="room-text">
+            <h2>餐客廳</h2>
+            
+            <ul>
+             
+              <li>
+                <span>餐客廳設有電視、舒適的沙發區和大餐桌，一旁是大片落地窗，無論用餐、休息或和聚會，都能欣賞窗外的景色，讓空間更顯開闊自在。</span>
+                
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./book.html">包棟費用與說明</a>
+            </div>
+          </div>
+  
+          <!-- 圖片輪播 -->
+          <div class="room-slider">
+            <div class="slider-track" >
+              <img
+                src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_1.jpg"
+                alt="房型1"
+              />
+              <img
+                src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_2.jpg"
+                alt="房型2"
+              />
+            </div>
+            <div class="slider-nav">
+              <button onclick="prevSlide()">❮</button>
+              <button onclick="nextSlide()">❯</button>
+            </div>
+            <div class="slider-dots" ></div>
+          </div>
+        </div>
+      </div>
+       <!-- 全螢幕覆蓋選單 -->
+       <div id="fullMenu" class="full-menu">
+        <button id="closeMenu" class="close-button">✕</button>
+        <ul class="menu-list">
+          <li><a href="./index.html">首頁</a></li>
+          <li><a href="#">空間介紹</a></li>
+          <li><a href="./equipment.html">設施總覽</a></li>
+          <li><a href="./index.html#traffic123">交通與週邊</a></li>
+          <li><a href="./notice.html">訂房須知</a></li>
+          <li><a href="./book.html">立即預訂</a></li>
+        </ul>
+      </div>
+      </section>
+      <section id="roomE" class="room-section">
+       
+        <ul class="room-nav">
+          <li ><a href="#roomA">雙人房</a></li>
+          <li ><a href="#roomB">四人房</a></li>
+          <li ><a href="#roomC">開放式廚房</a></li>
+          <li ><a href="#roomD">餐客廳</a></li>
+          <li ><a href="#roomE">室內交誼空間</a></li>
+          <li ><a href="#roomF">室外空間</a></li>
+        </ul>      
+        <div class="room-info">
+          <!-- 文字資訊欄 -->
+          <div class="room-text">
+            <h2>室內交誼空間</h2>
+            
+            <ul>
+             
+              <li><span>大片落地窗讓室內採光明亮，空間開闊，不受天氣影響，窗外景色一覽無遺。唱歌、打麻將、聊天或放空，都能自在享受，是最放鬆的角落。</span>
+                <li>
+                  <br>
+                  <span>設備｜</span><br />
+                  <span>KTV音響、投影設備、自動麻將桌</span>
+                </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./book.html">包棟費用與說明</a>
+            </div>
+          </div>
+  
+          <!-- 圖片輪播 -->
+          <div class="room-slider">
+            <div class="slider-track" >
+              <img
+                src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_1.jpg"
+                alt="房型1"
+              />
+              <img
+                src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_2.jpg"
+                alt="房型2"
+              />
+            </div>
+            <div class="slider-nav">
+              <button onclick="prevSlide()">❮</button>
+              <button onclick="nextSlide()">❯</button>
+            </div>
+            <div class="slider-dots" ></div>
+          </div>
+        </div>
+      </div>
+       <!-- 全螢幕覆蓋選單 -->
+       <div id="fullMenu" class="full-menu">
+        <button id="closeMenu" class="close-button">✕</button>
+        <ul class="menu-list">
+          <li><a href="./index.html">首頁</a></li>
+          <li><a href="#">空間介紹</a></li>
+          <li><a href="./equipment.html">設施總覽</a></li>
+          <li><a href="./index.html#traffic123">交通與週邊</a></li>
+          <li><a href="./notice.html">訂房須知</a></li>
+          <li><a href="./book.html">立即預訂</a></li>
+        </ul>
+      </div>
+      </section>
+      <section id="roomF" class="room-section">
+       
+        <ul class="room-nav">
+          <li ><a href="#roomA">雙人房</a></li>
+          <li ><a href="#roomB">四人房</a></li>
+          <li ><a href="#roomC">開放式廚房</a></li>
+          <li ><a href="#roomD">餐客廳</a></li>
+          <li ><a href="#roomE">室內交誼空間</a></li>
+          <li ><a href="#roomF">室外空間</a></li>
+        </ul>      
+        <div class="room-info">
+          <!-- 文字資訊欄 -->
+          <div class="room-text">
+            <h2>室外空間</h2>
+            
+            <ul>
+              <li>寬敞的草皮區綠意盎然，輕鬆坐下仰望天空，風景自然悠閒。無論是靜靜放空，還是與親友烤肉同樂，都是享受假期的好選擇。</li>
+              <li>
+                <br>
+                <span>戶外設施｜</span><br />
+                草坪區、烤肉區、停車場、電動車CCS2充電樁
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./book.html">包棟費用與說明</a>
+            </div>
+          </div>
+  
+          <!-- 圖片輪播 -->
+          <div class="room-slider">
+            <div class="slider-track" >
+              <img
+                src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_1.jpg"
+                alt="房型1"
+              />
+              <img
+                src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_2.jpg"
+                alt="房型2"
+              />
+            </div>
+            <div class="slider-nav">
+              <button onclick="prevSlide()">❮</button>
+              <button onclick="nextSlide()">❯</button>
+            </div>
+            <div class="slider-dots" ></div>
+          </div>
+        </div>
+      </div>
+       <!-- 全螢幕覆蓋選單 -->
+       <div id="fullMenu" class="full-menu">
+        <button id="closeMenu" class="close-button">✕</button>
+        <ul class="menu-list">
+          <li><a href="./index.html">首頁</a></li>
+          <li><a href="#">空間介紹</a></li>
+          <li><a href="./equipment.html">設施總覽</a></li>
+          <li><a href="./index.html#traffic123">交通與週邊</a></li>
+          <li><a href="./notice.html">訂房須知</a></li>
+          <li><a href="./book.html">預訂/價格</a></li>
+        </ul>
+      </div>
+      </section>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <img class="smalllogo" src="./pics/logo小.svg" alt="logo" />
+        <div class="footer-logo">MUMU 木木民宿</div>
+        <div class="footer-info">
+          <p>宜蘭縣民宿2434號</p>
+          <p>地址：宜蘭縣冬山鄉東八路110號</p>
+          <p>聯絡信箱：mumu269030@gmail.com</p>
+          <p>
+            官方Line：<a href="https://lin.ee/94RJiiC" target="_blank"
+              >@160ajblq</a
+            >
+          </p>
+        </div>
+        <div class="footer-copy">&copy; 2025 MUMU 木木民宿. 保留所有權利。</div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sliders = document.querySelectorAll(".room-slider");
+    
+        sliders.forEach((slider) => {
+          const track = slider.querySelector(".slider-track");
+          const slides = track.querySelectorAll("img");
+          const dotsContainer = slider.querySelector(".slider-dots");
+          const prevBtn = slider.querySelector("button:nth-child(1)");
+          const nextBtn = slider.querySelector("button:nth-child(2)");
+          let index = 0;
+    
+          function updateSlider() {
+            const width = slides[0].clientWidth;
+            track.style.transform = `translateX(-${index * width}px)`;
+            updateDots();
+          }
+    
+          function createDots() {
+            slides.forEach((_, i) => {
+              const dot = document.createElement("div");
+              dot.classList.add("dot");
+              if (i === index) dot.classList.add("active");
+              dot.addEventListener("click", () => {
+                index = i;
+                updateSlider();
+              });
+              dotsContainer.appendChild(dot);
+            });
+          }
+    
+          function updateDots() {
+            const dots = dotsContainer.querySelectorAll(".dot");
+            dots.forEach((dot, i) => {
+              dot.classList.toggle("active", i === index);
+            });
+          }
+    
+          prevBtn.addEventListener("click", () => {
+            index = (index - 1 + slides.length) % slides.length;
+            updateSlider();
+          });
+    
+          nextBtn.addEventListener("click", () => {
+            index = (index + 1) % slides.length;
+            updateSlider();
+          });
+    
+          window.addEventListener("resize", updateSlider);
+    
+          createDots();
+          updateSlider();
+        });
+      });
+    </script>
+    
+     <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger");
+        const fullMenu = document.getElementById("fullMenu");
+        const closeBtn = document.getElementById("closeMenu");
+
+        function openMenu() {
+          fullMenu.classList.add("active");
+          document.body.classList.add("no-scroll");
+        }
+
+        function closeMenu() {
+          fullMenu.classList.remove("active");
+          document.body.classList.remove("no-scroll");
+        }
+
+        hamburger.addEventListener("click", openMenu);
+        closeBtn.addEventListener("click", closeMenu);
+      });
+    </script>
+    <script>
+      window.addEventListener("scroll", function () {
+        const bg = document.querySelector(".room-bg");
+        const offset = window.scrollY * 0.3;
+        bg.style.transform = `translateY(${offset}px)`;
+      });
+    </script>
+   <script>
+    const navLinks = document.querySelectorAll('.room-nav li a');
+    const sections = document.querySelectorAll('.room-section');
+  
+    window.addEventListener('scroll', () => {
+      let currentId = '';
+  
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 700 && rect.bottom >= 50) {
+          currentId = section.getAttribute('id');
+        }
+      });
+  
+      // 移除所有 active
+      document.querySelectorAll('.room-nav').forEach(nav => {
+        nav.querySelectorAll('li').forEach(li => li.classList.remove('active'));
+      });
+  
+      // 對應的 nav 裡的 li 加上 active
+      document.querySelectorAll(`.room-nav a[href="#${currentId}"]`).forEach(link => {
+        link.parentElement.classList.add('active');
+      });
+    });
+  </script>
+  
+    
+  </body>
+</html>

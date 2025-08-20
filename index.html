@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MUMU | 木木民宿</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="intro">
+      <img id="logo" src="./pics/logo小.svg" alt="木木民宿 Logo" />
+    </div>
+
+    <nav class="navbar">
+      <div class="logo2">
+        <a href="#"> <img src="./pics/logo小.svg" alt="logo" /></a>
+      </div>
+      <ul class="nav-links">
+        <li><a class="active" href="#">首頁</a></li>
+        <li><a href="./room.html">空間介紹</a></li>
+        <li><a href="./equipment.html">設施總覽</a></li>
+        <li><a href="#traffic123">交通與週邊</a></li>
+        <div class="line"></div>
+        <li><a href="./notice.html">訂房須知</a></li>
+        <li class="box"><a href="./book.html">預訂/價格</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+    <main id="main">
+      <section class="background-img">
+        <div class="background-layer layer1"></div>
+        <div class="background-layer layer2"></div>
+        <div class="background-layer layer3"></div>
+        <div class="background-layer layer4"></div>
+        <h3>
+          MUMU 木木民宿
+          <hr />
+        </h3>
+
+        <h4 id="concept1">遠離塵囂，享受一段純粹的慢活時光。</h4>
+        <section id="concept" class="concept-section">
+          <a href="#concept1" class="scroll-down hero-content">⌄</a>
+        </section>
+
+        <h5>
+          坐落於宜蘭冬山河畔，讓您遠離都市喧嚣，盡享大自然的靜謐與美好。清晨喚醒您的，是河畔微風與鳥鳴，傍晚則有夕陽染紅水面，帶來寧靜祥和的氛圍。無論是親子同遊還是好友小聚，我們提供溫馨舒適的住宿空間，讓您感受宜蘭的純淨與悠閒。也是探索冬山鄉美景的最佳起點。期待在這片自然懷抱中，與您共創美好回憶。
+        </h5>
+      </section>
+      <section class="room-page">
+        <h3>房型介紹</h3>
+        <h4>
+          我們共設有五間房，各自擁有不同的光影與景色。大片窗景引入自然光，空間靜謐溫暖。水泥牆面搭配溫潤木材，保留極簡線條與木質氛圍，舒適沉靜。
+        </h4>
+        <section><a href="./room.html">more ></a></section>
+
+        <div class="room-pic">
+          <a href="./room.html" class="image-link"
+            ><img src="./pics/IMG_7678.jpeg" alt="房間圖片"
+          /></a>
+        </div>
+      </section>
+      <section class="equipment-page">
+        <h3>公共空間</h3>
+        <h4>
+          民宿室外設有大片草地，適合散步、靜坐放鬆。設有大面積的室內空間採光良好，讓氣候不佳時也能與家人朋友享受歡樂時光。也提供電動麻將桌、ＫＴＶ...等設施，邀您在靜與動之間，體驗簡單、剛好的生活風景。
+        </h4>
+        <section><a href="./equipment.html">more ></a></section>
+
+        <div class="equipment-pic">
+          <a href="./equipment.html"
+            ><img src="./pics/IMG_7678.jpeg" alt="房間圖片"
+          /></a>
+        </div>
+      </section>
+      <section id="traffic123" class="traffic-page">
+        <h3>交通與週邊</h3>
+        <h4>
+          MUMU
+          木木民宿位於宜蘭冬山鄉，地理位置優越，開車10分鐘內可抵達多個熱門景點，包括梅花湖、冬山河親水公園、羅東夜市與國立傳統藝術中心。鄰近的斑比山丘與中興文化創意園區也十分適合親子與情侶出遊。民宿周邊環境清幽，交通便利，距羅東車站僅15分鐘車程，是串聯宜蘭中部景點的理想落腳點。
+          無論是一日輕旅行或多日慢遊，都能輕鬆安排行程。
+        </h4>
+
+        <div class="traffic-pic">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.6436523436582!2d121.80728811116964!3d24.670391277962366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3467e7d407757d9f%3A0xdfe0ca91e2cb5e8e!2zTVVNVSDmnKjmnKjvvZzmsJHlrr8!5e0!3m2!1szh-TW!2stw!4v1753083545653!5m2!1szh-TW!2stw"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+    <!-- 全螢幕覆蓋選單 -->
+    <div id="fullMenu" class="full-menu">
+      <button id="closeMenu" class="close-button">✕</button>
+      <ul class="menu-list">
+        <li><a href="#">首頁</a></li>
+        <li><a href="./room.html">空間介紹</a></li>
+        <li><a href="./equipment.html">設施總覽</a></li>
+        <li><a href="./index.html#traffic123">交通與週邊</a></li>
+        <li><a href="./notice.html">訂房須知</a></li>
+        <li><a href="./book.html">預訂/價格</a></li>
+      </ul>
+    </div>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <img class="smalllogo" src="./pics/logo小.svg" alt="logo" />
+        <div class="footer-logo">MUMU 木木民宿</div>
+        <div class="footer-info">
+          <p>宜蘭縣民宿2434號</p>
+          <p>地址：宜蘭縣冬山鄉東八路110號</p>
+          <p>聯絡信箱：mumu269030@gmail.com</p>
+          <p>
+            官方Line：<a href="https://lin.ee/94RJiiC" target="_blank"
+              >@160ajblq</a
+            >
+          </p>
+        </div>
+        <div class="footer-copy">&copy; 2025 MUMU 木木民宿. 保留所有權利。</div>
+      </div>
+    </footer>
+
+    <script>
+      // 等 intro 動畫結束後顯示主畫面
+      setTimeout(() => {
+        document.querySelector(".intro").style.display = "none";
+        document.querySelector("#main").style.display = "block";
+      }, 3000);
+    </script>
+
+    <script>
+      const images = [
+        "./pics/0DSC00825.jpg",
+        "./pics/0IMG_5202.jpg",
+        "./pics/0DSC05959.jpg",
+        "./pics/0DSC00824.jpg",
+      ];
+
+      const layers = document.querySelectorAll(".background-layer");
+      let index = 0;
+
+      // 初始設置
+      layers.forEach((layer, i) => {
+        layer.style.backgroundSize = "cover";
+        layer.style.backgroundPosition = "center";
+        layer.style.opacity = "0";
+        layer.style.transition = "opacity 2s ease-in-out";
+      });
+
+      layers[0].style.backgroundImage = `url(${images[0]})`;
+      layers[0].style.opacity = "1";
+
+      setInterval(() => {
+        const current = layers[index % layers.length];
+        const next = layers[(index + 1) % layers.length];
+        const nextImage = images[(index + 1) % images.length];
+
+        next.style.backgroundImage = `url(${nextImage})`;
+        next.style.opacity = "1";
+        current.style.opacity = "0";
+
+        index = (index + 1) % images.length;
+      }, 4000);
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger");
+        const fullMenu = document.getElementById("fullMenu");
+        const closeBtn = document.getElementById("closeMenu");
+
+        function openMenu() {
+          fullMenu.classList.add("active");
+          document.body.classList.add("no-scroll");
+        }
+
+        function closeMenu() {
+          fullMenu.classList.remove("active");
+          document.body.classList.remove("no-scroll");
+        }
+
+        hamburger.addEventListener("click", openMenu);
+        closeBtn.addEventListener("click", closeMenu);
+      });
+    </script>
+  </body>
+</html>

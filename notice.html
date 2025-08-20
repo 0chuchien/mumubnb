@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MUMU | 木木民宿</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="intro">
+      <a href="./index.html">
+        <img id="logo" src="./pics/logo小.svg" alt="木木民宿 Logo" />
+      </a>
+    </div>
+
+    <nav class="navbar">
+      <div class="logo2">
+        <a href="#"> <img src="./pics/logo小.svg" alt="logo" /></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="./index.html">首頁</a></li>
+        <li><a href="./room.html">空間介紹</a></li>
+        <li><a href="./equipment.html">設施總覽</a></li>
+        <li><a href="./index.html#traffic123">交通與週邊</a></li>
+        <div class="line"></div>
+        <li><a class="active" href="#">訂房須知</a></li>
+        <li class="box"><a href="./book.html">預訂/價格</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+    <!-- 全螢幕覆蓋選單 -->
+    <div id="fullMenu" class="full-menu">
+      <button id="closeMenu" class="close-button">✕</button>
+      <ul class="menu-list">
+        <li><a href="#">首頁</a></li>
+        <li><a href="./room.html">空間介紹</a></li>
+        <li><a href="./equipment.html">設施總覽</a></li>
+        <li><a href="./index.html#traffic123">交通與週邊</a></li>
+        <li><a href="./notice.html">訂房須知</a></li>
+        <li><a href="./book.html">預訂/價格</a></li>
+      </ul>
+    </div>
+    <main class="faq-container">
+      <h1>訂房須知</h1>
+      <a href="#rules">請旅客務必瀏覽最下方基本規定</a>
+
+  
+      <!--預訂／付款-->
+
+      <section class="faq-section">
+        <h2>預訂／付款</h2>
+
+        <div class="faq-item">
+          <button class="faq-question">如何預訂？</button>
+          <div class="faq-answer">
+            <p>請透過木木民宿官方LINE預訂。<br />官方Line ID：@160ajblq</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">如何付款？</button>
+          <div class="faq-answer">
+            <p>僅提供匯款：完成訂房後，並需預付房價的 30% 作為訂金，請於 24 小時內完成付款，並回覆匯款帳號後五碼以便確認。</p>
+            <p>匯款銀行：永豐銀行 <br>
+              銀行代碼：807  <br>
+             
+              戶名：林楚倩 <br>
+              匯款帳號：20401800361435</p>
+              <small>匯款完成後，請提供「匯款後五碼 + 訂房姓名 + 入住日期」私訊我們，謝謝您！</small>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">訂房、退訂與改期規範。</button>
+          <div class="faq-answer">
+            <h3> 訂房需知</h3>
+<ol>
+  <li>本民宿採預約制，<strong>訂房時須支付房價 50% 為訂金</strong>，方完成保留房間手續。未完成付款者，恕不保留房間。</li>
+  <li>請於訂房後 <strong>1 日內完成匯款</strong>，逾期未付款將視同取消。</li>
+  <li>匯款完成後，請<strong>來電或訊息告知帳號後五碼</strong>，以利核對款項並完成訂房程序。</li>
+  <li>訂房前請確認人數並依實際入住人數訂房，恕不接受超額入住或現場臨時加人。</li>
+  <li>連續假期期間（如中秋、春節、國慶等）<strong>恕不接受單日入住，需連續住宿</strong>。請依公告入住條件預訂，造成不便敬請見諒。</li>
+
+</ol>
+<br>
+<h3> 退房與取消訂房須知</h3>
+<ol>
+  <li>訂金退還標準如下：
+    <ol type="a">
+      <li>住宿日前 <strong>14 天（含）以前取消</strong>，退回 <strong>100%</strong> 訂金。</li>
+      <li>住宿日前 <strong>10～13 天（含）取消</strong>，退回 <strong>70%</strong> 訂金。</li>
+      <li>住宿日前 <strong>7～9 天（含）取消</strong>，退回 <strong>50%</strong> 訂金。</li>
+      <li>住宿日前 <strong>4～6 天（含）取消</strong>，退回 <strong>40%</strong> 訂金。</li>
+      <li>住宿日前 <strong>2～3 天（含）取消</strong>，退回 <strong>30%</strong> 訂金。</li>
+      <li>住宿日前 <strong>1 天（含）取消</strong>，退回 <strong>20%</strong> 訂金。</li>
+      <li><strong>住宿當日取消或未入住者</strong>，<strong>不退訂金</strong>。</li>
+    </ol>
+  </li>
+  <li>符合退款條件者，請提供正確帳戶資訊，<strong>我們將於 7 個工作日內辦理退款</strong>。</li>
+  <li>若遇 <strong>中央氣象局發布陸上颱風警報</strong> 或 <strong>重大災害導致旅宿所在地宣布停班停課</strong>，可全額退還訂金，無須負擔手續費。</li>
+  <li>除不可抗力因素外，<strong>每房退款將酌收行政處理費 $50 元</strong>。</li>
+</ol>
+<br>
+<h3> 更改住宿日期須知</h3>
+<ol>
+  <li>如需延期住宿，請於原訂住宿日<strong>14 日前通知</strong>；國定假日、春節、跨年等特殊期間請提前<strong>至少 1 個月</strong>通知。</li>
+  <li>延期訂房之訂金可保留<strong>3 個月內擇期入住</strong>，<strong>僅限更改一次</strong>，逾期視同取消，恕不退還。</li>
+  <li>更改後如房價不同，<strong>需依新日期之房價補足差額，不另行退費</strong>。</li>
+</ol>
+
+          </div>
+        </div>
+      </section>
+      <!--入住／退房-->
+
+      <section class="faq-section">
+        <h2>入住／退房</h2>
+
+        <div class="faq-item">
+          <button class="faq-question">入住與退房時間？</button>
+          <div class="faq-answer">
+            <p>．入住時間為 15 : 00 ～ 18 : 00 ，若入住時間超過 18 : 00 請提前告知。<br>．退房時間為 11 : 00 ，每超出半小時每房收取 NT$1,500 元，以此類推。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">寵物能入住嗎？</button>
+          <div class="faq-answer">
+            <p>目前尚不開放寵物入住</strong>，若未經同意擅自帶入，本民宿保有拒絕入住並沒收訂金之權利。</li>。</p>
+          </div>
+        </div>
+       
+      </section>
+      <!--設施及服務-->
+      <section class="faq-section">
+        <h2>設施及服務</h2>
+
+        <div class="faq-item">
+          <button class="faq-question">可以加人加床嗎？</button>
+          <div class="faq-answer">
+            <p>本民宿因房型空間配置，恕不提供加床服務。若需額外加人入住，將酌收 $1000 / 人之費用，敬請配合。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">有提供早餐嗎？</button>
+          <div class="faq-answer">
+            <p>本本民宿無附早餐，敬請旅客自行安排，感謝您的理解。</p>
+          </div>
+        </div>
+      </section>
+   
+
+       <!--基本規定-->
+       <section id="rules" class="faq-section">
+        <h2>基本規定</h2>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <ol class="rules-list">
+              <li>
+                為維護住宿品質與安全，本民宿室內空間及樓層陽台全面
+                <strong>禁煙、禁檳榔、禁止烤肉、禁止攜帶寵物入住，且嚴禁轟趴、吸毒、酗酒及危害本民宿之一切行為</strong>，
+                造成損失將依法求償及移送法辦。
+                <strong>以上有任何一項發生，本民宿將強制退房，且不退任何費用。</strong>
+              </li>
+              <li>
+                旅客入住後，民宿內外任何設備、物品及床組品，如有
+                <strong>竊取、損壞或留下無法清潔之污漬</strong>，
+                <strong>民宿業者有權要求原價賠償</strong>；蓄意者將移送法辦。
+              </li>
+              <li>
+                個人貴重物品請自行妥善攜帶與保管，如有遺失恕不負責，敬請見諒。
+                <strong>若住宿旅客離開後有物品遺留，經確認屬實，我們將協助寄回，但運費需由旅客自行負擔。</strong>
+              </li>
+              <li>
+                戶外活動請於 22:00 後
+                <strong>降低音量、勿大聲喧嘩</strong>，
+                <strong>以避免影響鄰居權益。</strong>
+              </li>
+              <li>
+                民宿空間寬敞，
+                <strong>若有小朋友入住，請家長留意其行為並加以約束</strong>，
+                以避免過度跑跳而發生摔跌、碰撞等意外。
+              </li>
+              <li>
+                <strong>請勿任意移動室內擺設</strong>
+                （如床鋪、沙發、桌椅、液晶電視等），
+                以避免造成牆壁、地板及門窗損壞。
+                一經發現，民宿業者有權要求收取費用 NT$5,000 元。
+                <strong>若造成屋內任何損壞，則須賠償修繕費用全額。</strong>
+              </li>
+              <li>
+                入住時請出示身分證件，以依《民宿管理辦法》規定確認訂房身份並登記。
+              </li>
+              <li>
+                請依訂房時既定人數入住，本民宿保有不接待臨時到訪過夜人員之權利，並不退還訂金。
+              </li>
+              <li>
+                三歲以下孩童免收費用，三歲（含）以上以成人費用計算。
+              </li>
+              <li>
+                請愛惜民宿內所有公物傢俱與電器，如因貴賓故意或過失造成損壞，
+                <strong>物品須照價賠償，並含維修期間的損失</strong>。
+                請勿攜出任何備品（如杯具、毛巾、吹風機等）。
+              </li>
+              <li>
+                歡迎慶生佈置，但為維護空間品質，如有相關需求請提前告知，並避免牆面與玻璃損傷，謝謝您！
+              </li>
+              <li>
+                基於安全考量，
+                <strong>使用民宿設施（如浴缸）請自我評估健康狀況</strong>，
+                若身體不適（心臟病、高血壓等）請謹慎使用；孩童請家長自行照看，本民宿無法承擔任何意外責任。
+              </li>
+              <li>
+                本民宿停車場僅提供免費停車場地使用，不負保管責任。
+              </li>
+              <li>
+                響應政府環保政策，
+                <strong>不主動提供一次性備品</strong>
+                （如牙刷、牙膏、浴帽、刮鬍刀、梳子等）。
+              </li>
+              <li>
+                依觀光局民宿法規規定，
+                <strong>KTV 僅限歡唱至晚上 10:00</strong>，不便之處敬請見諒。
+              </li>
+              <li>
+                不接待非住宿訪客，若發現<strong>每人將酌收 NT$1,000 清潔費</strong>。
+              </li>
+            </ol>
+            
+            
+        </div>
+
+        
+        </div>
+      </section>
+   
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <img class="smalllogo" src="./pics/logo小.svg" alt="logo" />
+        <div class="footer-logo">MUMU 木木民宿</div>
+        <div class="footer-info">
+          <p>宜蘭縣民宿2434號</p>
+          <p>地址：宜蘭縣冬山鄉東八路110號</p>
+          <p>聯絡信箱：mumu269030@gmail.com</p>
+          <p>
+            官方Line：<a href="https://lin.ee/94RJiiC" target="_blank"
+              >@160ajblq</a
+            >
+          </p>
+        </div>
+        <div class="footer-copy">&copy; 2025 MUMU 木木民宿. 保留所有權利。</div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger");
+        const fullMenu = document.getElementById("fullMenu");
+        const closeBtn = document.getElementById("closeMenu");
+
+        function openMenu() {
+          fullMenu.classList.add("active");
+          document.body.classList.add("no-scroll");
+        }
+
+        function closeMenu() {
+          fullMenu.classList.remove("active");
+          document.body.classList.remove("no-scroll");
+        }
+
+        hamburger.addEventListener("click", openMenu);
+        closeBtn.addEventListener("click", closeMenu);
+      });
+    </script>
+    <script>
+      document.querySelectorAll(".faq-question").forEach((button) => {
+        button.addEventListener("click", () => {
+          const answer = button.nextElementSibling;
+          const isVisible = answer.style.display === "block";
+
+          // 關閉所有答案
+          document.querySelectorAll(".faq-answer").forEach((ans) => {
+            ans.style.display = "none";
+          });
+
+          // 如果原本是關閉的，就打開
+          if (!isVisible) {
+            answer.style.display = "block";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
