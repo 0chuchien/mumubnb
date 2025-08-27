@@ -254,13 +254,15 @@ body main section.background-img div.filter {
   justify-content: center;
   align-items: center;
   width: 30vw;
+  padding-bottom: 150px;
+  padding-top: 200px;
 }
 
 body main section.background-img h4 {
   color: whitesmoke;
   font-size: 2rem;
   text-align: center;
-  font-weight: lighter;
+  font-weight: normal;
   display: block;
   transition: font-size 0.4s ease; /* 加上滑順效果 */
 }
@@ -269,7 +271,7 @@ body main section.background-img h1 {
   color: whitesmoke;
   font-size: 3rem;
   text-align: center;
-  font-weight: lighter;
+  font-weight: normal;
   display: block;
   margin-top: 18rem;
   transition: font-size 0.4s ease;
@@ -279,7 +281,7 @@ body main section.background-img h5 {
   color: white;
   font-size: 1.5rem;
   text-align: center;
-  font-weight: lighter;
+  font-weight: normal;
   display: block;
   margin-top: 25rem;
   margin-left: 20%;
@@ -290,7 +292,7 @@ body main section.background-img h5 {
 /* 平板（<=1024px） */
 @media (max-width: 1024px) {
   body main section.background-img h4 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   body main section.background-img h1 {
     font-size: 2.5rem;
@@ -309,7 +311,7 @@ body main section.background-img h5 {
     font-size: 2rem;
   }
   body main section.background-img h5 {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 
@@ -338,6 +340,49 @@ body main section.background-img h5 {
   margin-top: 1rem;
   margin-left: 30%;
   margin-right: 30%;
+}
+/* 平板（<=1024px） */
+@media (max-width: 1024px) {
+  body main .room-page h4 {
+    font-size: 1.5rem;
+  }
+  body main .room-page h3 {
+    font-size: 2.5rem;
+  }
+  body main .equipment-page h4 {
+    font-size: 1.5rem;
+  }
+  body main .equipment-page h3 {
+    font-size: 2.5rem;
+  }
+  body main .traffic-page h4 {
+    font-size: 1.5rem;
+  }
+  body main .traffic-page h3 {
+    font-size: 2.5rem;
+  }
+}
+
+/* 手機（<=600px） */
+@media (max-width: 600px) {
+  body main .room-page h4 {
+    font-size: 1rem;
+  }
+  body main .room-page h3 {
+    font-size: 2rem;
+  }
+  body main .equipment-page h4 {
+    font-size: 1rem;
+  }
+  body main .equipment-page h3 {
+    font-size: 2rem;
+  }
+  body main .traffic-page h4 {
+    font-size: 1rem;
+  }
+  body main .traffic-page h3 {
+    font-size: 2rem;
+  }
 }
 .room-page a {
   font-size: 1rem;
