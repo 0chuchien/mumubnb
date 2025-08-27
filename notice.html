@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MUMU | 木木民宿</title>
+    <title>MUMU 丨 木木民宿</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="icon" href="favicon.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -15,7 +15,7 @@
       </a>
     </div>
 
-    <nav class="navbar">
+    <nav class="navbar white-default">
       <div class="logo2">
         <a href="#"> <img src="./pics/logo小.svg" alt="logo" /></a>
       </div>
@@ -206,6 +206,14 @@
               <li>
                 歡迎慶生佈置，但為維護空間品質，如有相關需求請提前告知，並避免牆面與玻璃損傷，謝謝您！
               </li>
+              <li>請先閱讀使用說明再使用各項設備。如電動麻將、KTV、SWITCH、咖啡機、微波爐、烤箱＆電鍋。</li>
+              <li>本館開放式廚房提供ＩＨ爐、廚具及各式鍋具、餐具、杯盤予入住貴賓使用， <strong>使用完需自行洗淨後歸位</strong>。若使用後未清潔者，需於退房時加收清潔費新台幣1,000元整。</li>
+              <li>本館提供免費烤肉區＆烤肉爐使用。用畢敬請清潔乾淨，並請妥善處理垃圾、確實做好垃圾分類。若使用後未清潔者，需於退房時加收清潔費新台幣1,000元整。</li>
+              <li> <strong>請妥善處理垃圾＆確實做好垃圾分類。戶外備有分類大垃圾桶</strong>。</li>
+
+              <li>為確保住宿客人的安全＆雙方權益，戶外＆公共區域設有監視器，敬請見諒。</li>
+              <li>因位於田間，蚊蟲較多，也難免有小昆蟲作伴，敬請見諒（介意者勿包）。</li>
+              <li>傍晚之後建議關好門窗，避免蚊蟲趨光來作伴。</li>
               <li>
                 基於安全考量，
                 <strong>使用民宿設施（如浴缸）請自我評估健康狀況</strong>，
@@ -255,23 +263,51 @@
       </div>
     </footer>
     <script>
+    let lastScroll = 0;
+      const navbar = document.querySelector(".navbar");
+
+      // 判斷是否要預設白底
+      const isWhiteDefault = navbar.classList.contains("white-default");
+
+      // 如果是白底模式 → 一開始就加上 scrolled
+      if (isWhiteDefault) {
+        navbar.classList.add("scrolled");
+      }
+
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.scrollY;
+
+        if (!isWhiteDefault) {
+          // 透明版：超過 10px 才加白底
+          if (currentScroll > 10) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        }
+
+        // 下滑隱藏，上滑顯示
+        if (currentScroll > lastScroll && currentScroll > 10) {
+          navbar.classList.add("hide");
+        } else {
+          navbar.classList.remove("hide");
+        }
+
+        lastScroll = currentScroll;
+      });
+    
+      // 漢堡選單
       document.addEventListener("DOMContentLoaded", () => {
         const hamburger = document.querySelector(".hamburger");
         const fullMenu = document.getElementById("fullMenu");
         const closeBtn = document.getElementById("closeMenu");
-
-        function openMenu() {
+    
+        hamburger.addEventListener("click", () => {
           fullMenu.classList.add("active");
-          document.body.classList.add("no-scroll");
-        }
-
-        function closeMenu() {
+        });
+        closeBtn.addEventListener("click", () => {
           fullMenu.classList.remove("active");
-          document.body.classList.remove("no-scroll");
-        }
-
-        hamburger.addEventListener("click", openMenu);
-        closeBtn.addEventListener("click", closeMenu);
+        });
       });
     </script>
     <script>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MUMU | 木木民宿</title>
+    <title>MUMU 丨 木木民宿</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="icon" href="favicon.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -15,7 +15,7 @@
 
     <nav class="navbar">
       <div class="logo2">
-        <a href="#"> <img src="./pics/logo小.svg" alt="logo" /></a>
+        <a href="#"><img src="./pics/logo小白.svg" alt="logo" /></a>
       </div>
       <ul class="nav-links">
         <li><a class="active" href="#">首頁</a></li>
@@ -26,7 +26,7 @@
         <li><a href="./notice.html">訂房須知</a></li>
         <li class="box"><a href="./book.html">預訂/價格</a></li>
       </ul>
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="hamburger">☰</div>
     </nav>
     <main id="main">
       <section class="background-img">
@@ -34,11 +34,10 @@
         <div class="background-layer layer2"></div>
         <div class="background-layer layer3"></div>
         <div class="background-layer layer4"></div>
-        <h3>
-          MUMU 木木民宿
-          <hr />
-        </h3>
 
+        <img class="bigname" src="./pics/logo白字.svg" alt="logo" />
+
+        <hr />
         <h4 id="concept1">遠離塵囂，享受一段純粹的慢活時光。</h4>
         <section id="concept" class="concept-section">
           <a href="#concept1" class="scroll-down hero-content">⌄</a>
@@ -47,6 +46,9 @@
         <h5>
           坐落於宜蘭冬山河畔，讓您遠離都市喧嚣，盡享大自然的靜謐與美好。清晨喚醒您的，是河畔微風與鳥鳴，傍晚則有夕陽染紅水面，帶來寧靜祥和的氛圍。無論是親子同遊還是好友小聚，我們提供溫馨舒適的住宿空間，讓您感受宜蘭的純淨與悠閒。也是探索冬山鄉美景的最佳起點。期待在這片自然懷抱中，與您共創美好回憶。
         </h5>
+      </section>
+      <section>
+        <h3>最新消息</h3>
       </section>
       <section class="room-page">
         <h3>房型介紹</h3>
@@ -57,7 +59,7 @@
 
         <div class="room-pic">
           <a href="./room.html" class="image-link"
-            ><img src="./pics/IMG_7678.jpeg" alt="房間圖片"
+            ><img src="./pics/DSC06704.JPG" alt="房間圖片"
           /></a>
         </div>
       </section>
@@ -124,26 +126,54 @@
     </footer>
 
     <script>
-      // 等 intro 動畫結束後顯示主畫面
-      setTimeout(() => {
-        document.querySelector(".intro").style.display = "none";
-        document.querySelector("#main").style.display = "block";
-      }, 3000);
-    </script>
+      let lastScroll = 0;
+      const navbar = document.querySelector(".navbar");
 
-    <script>
-      const images = [
-        "./pics/0DSC00825.jpg",
-        "./pics/0IMG_5202.jpg",
-        "./pics/0DSC05959.jpg",
-        "./pics/0DSC00824.jpg",
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.scrollY;
+
+        // 捲動超過 50px 就加白底
+        if (currentScroll > 10) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+
+        // 判斷滑動方向
+        if (currentScroll > lastScroll && currentScroll > 10) {
+          // 向下滑而且超過 100px → 隱藏
+          navbar.classList.add("hide");
+        } else {
+          // 向上滑 → 顯示
+          navbar.classList.remove("hide");
+        }
+
+        lastScroll = currentScroll;
+      });
+
+      // 桌機版大圖
+      const desktopImages = [
+        "./pics/1.jpg",
+        "./pics/2.jpg",
+        "./pics/3.jpg",
+        "./pics/4.jpg",
       ];
+
+      // 手機版小圖
+      const mobileImages = [
+        "./pics/1a.jpg",
+        "./pics/2a.jpg",
+        "./pics/3a.jpg",
+        "./pics/4a.jpg",
+      ];
+
+      // 判斷是否為手機尺寸（例如寬度 <= 768px）
+      let images = window.innerWidth <= 768 ? mobileImages : desktopImages;
 
       const layers = document.querySelectorAll(".background-layer");
       let index = 0;
 
-      // 初始設置
-      layers.forEach((layer, i) => {
+      layers.forEach((layer) => {
         layer.style.backgroundSize = "cover";
         layer.style.backgroundPosition = "center";
         layer.style.opacity = "0";
@@ -157,32 +187,29 @@
         const current = layers[index % layers.length];
         const next = layers[(index + 1) % layers.length];
         const nextImage = images[(index + 1) % images.length];
-
         next.style.backgroundImage = `url(${nextImage})`;
         next.style.opacity = "1";
         current.style.opacity = "0";
-
         index = (index + 1) % images.length;
       }, 4000);
-    </script>
-    <script>
+
+      // ✅ 視窗縮放時也更新圖片來源
+      window.addEventListener("resize", () => {
+        images = window.innerWidth <= 768 ? mobileImages : desktopImages;
+      });
+
+      // 漢堡選單
       document.addEventListener("DOMContentLoaded", () => {
         const hamburger = document.querySelector(".hamburger");
         const fullMenu = document.getElementById("fullMenu");
         const closeBtn = document.getElementById("closeMenu");
 
-        function openMenu() {
+        hamburger.addEventListener("click", () => {
           fullMenu.classList.add("active");
-          document.body.classList.add("no-scroll");
-        }
-
-        function closeMenu() {
+        });
+        closeBtn.addEventListener("click", () => {
           fullMenu.classList.remove("active");
-          document.body.classList.remove("no-scroll");
-        }
-
-        hamburger.addEventListener("click", openMenu);
-        closeBtn.addEventListener("click", closeMenu);
+        });
       });
     </script>
   </body>

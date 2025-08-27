@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MUMU | 木木民宿</title>
+    <title>MUMU 丨 木木民宿</title>
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="./style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -22,7 +22,7 @@
       <img id="logo" src="./pics/logo小.svg" alt="木木民宿 Logo" />
     </div>
 
-    <nav class="navbar">
+    <nav class="navbar white-default">
       <div class="logo2">
         <a href="#"> <img src="./pics/logo小.svg" alt="logo" /></a>
       </div>
@@ -117,35 +117,51 @@
       </div>
     </footer>
     <script>
+      let lastScroll = 0;
+      const navbar = document.querySelector(".navbar");
+
+      // 判斷是否要預設白底
+      const isWhiteDefault = navbar.classList.contains("white-default");
+
+      // 如果是白底模式 → 一開始就加上 scrolled
+      if (isWhiteDefault) {
+        navbar.classList.add("scrolled");
+      }
+
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.scrollY;
+
+        if (!isWhiteDefault) {
+          // 透明版：超過 10px 才加白底
+          if (currentScroll > 10) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        }
+
+        // 下滑隱藏，上滑顯示
+        if (currentScroll > lastScroll && currentScroll > 10) {
+          navbar.classList.add("hide");
+        } else {
+          navbar.classList.remove("hide");
+        }
+
+        lastScroll = currentScroll;
+      });
+
+      // 漢堡選單
       document.addEventListener("DOMContentLoaded", () => {
         const hamburger = document.querySelector(".hamburger");
         const fullMenu = document.getElementById("fullMenu");
         const closeBtn = document.getElementById("closeMenu");
 
-        function openMenu() {
+        hamburger.addEventListener("click", () => {
           fullMenu.classList.add("active");
-          document.body.classList.add("no-scroll");
-        }
-
-        function closeMenu() {
+        });
+        closeBtn.addEventListener("click", () => {
           fullMenu.classList.remove("active");
-          document.body.classList.remove("no-scroll");
-        }
-
-        hamburger.addEventListener("click", openMenu);
-        closeBtn.addEventListener("click", closeMenu);
-      });
-    </script>
-    <script>
-      flatpickr("#dateRangePicker", {
-        mode: "range",
-        locale: "zh",
-        dateFormat: "Y-m-d",
-        minDate: "today",
-        showMonths: 2,
-        onChange: function (selectedDates, dateStr, instance) {
-          console.log("選擇的日期區間：", dateStr);
-        },
+        });
       });
     </script>
   </body>

@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MUMU | 木木民宿</title>
+    <title>MUMU 丨 木木民宿</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="icon" href="favicon.ico" />
   </head>
@@ -56,7 +56,7 @@
             <h3>21-22m<sup>2</sup></h3>
             <ul>
               <li><span>床型｜</span><span>標準雙人床</span></li>
-              <li><span>房間數｜</span><span>3 間</span>
+              <li><span>房間數｜</span><span>2 間</span>
               </li>
               <li><span>寢具｜</span><span>羽絨被、羽毛枕</span>
               </li>
@@ -85,6 +85,14 @@
                 src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_2.jpg"
                 alt="房型2"
               />
+              <img
+              src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_2.jpg"
+              alt="房型3"
+            />
+            <img
+            src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_2.jpg"
+            alt="房型4"
+          />
             </div>
             <div class="slider-nav">
               <button onclick="prevSlide()">❮</button>
@@ -133,14 +141,21 @@
           <div class="room-slider">
             <div class="slider-track" >
               <img
-                src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_1.jpg"
-                alt="房型1"
-              />
-              <img
-                src="https://hotel.muji.com/ginza/wp-content/themes/mujihotelginza/img/rooms_type_a_2.jpg"
-                alt="房型2"
-              />
-            </div>
+              src="./pics/DSC06716.JPG"
+              alt="房型1"
+            />
+            <img
+              src="./pics/DSC06718.JPG"
+              alt="房型2"
+            />
+            <img
+            src="./pics/DSC06790.JPG"
+            alt="房型3"
+          />
+          <img
+          src="./pics/DSC06776.JPG"
+          alt="房型4"
+        />
             <div class="slider-nav">
               <button onclick="prevSlide()">❮</button>
               <button onclick="nextSlide()">❯</button>
@@ -481,24 +496,44 @@
       });
     </script>
     
-     <script>
+    <script>
+     let lastScroll = 0;
+      const navbar = document.querySelector(".navbar");
+
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.scrollY;
+
+        // 捲動超過 50px 就加白底
+        if (currentScroll > 10) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+
+        // 判斷滑動方向
+        if (currentScroll > lastScroll && currentScroll > 10) {
+          // 向下滑而且超過 100px → 隱藏
+          navbar.classList.add("hide");
+        } else {
+          // 向上滑 → 顯示
+          navbar.classList.remove("hide");
+        }
+
+        lastScroll = currentScroll;
+      });
+    
+      // 漢堡選單
       document.addEventListener("DOMContentLoaded", () => {
         const hamburger = document.querySelector(".hamburger");
         const fullMenu = document.getElementById("fullMenu");
         const closeBtn = document.getElementById("closeMenu");
-
-        function openMenu() {
+    
+        hamburger.addEventListener("click", () => {
           fullMenu.classList.add("active");
-          document.body.classList.add("no-scroll");
-        }
-
-        function closeMenu() {
+        });
+        closeBtn.addEventListener("click", () => {
           fullMenu.classList.remove("active");
-          document.body.classList.remove("no-scroll");
-        }
-
-        hamburger.addEventListener("click", openMenu);
-        closeBtn.addEventListener("click", closeMenu);
+        });
       });
     </script>
     <script>

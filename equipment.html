@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MUMU | 木木民宿</title>
+    <title>MUMU 丨 木木民宿</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="icon" href="favicon.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -40,7 +40,16 @@
         <li><a href="./book.html">預訂/價格</a></li>
       </ul>
     </div>
-
+    <section class="room1">
+      <div class="room-bg"></div>
+      <div class="room-content">
+        <h3>房型與公共空間</h3>
+        <h4>
+          六間客房各具光影與景色，融合清水模與木質元素，靜謐溫暖。配備浴缸、免治馬桶、Dyson
+          吹風機、陽台與暖房乾燥空調。戶外草地與採光良好的公共空間，無論獨處或相聚，都能自在享受每段時光。
+        </h4>
+      </div>
+    </section>
     <section class="equipment-title">
       <h2>設施總覽</h2>
       <p>提供舒適完善的設備，讓您自在享受每段旅程。</p>
@@ -119,23 +128,42 @@
       </div>
     </footer>
     <script>
+      let lastScroll = 0;
+      const navbar = document.querySelector(".navbar");
+
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.scrollY;
+
+        // 捲動超過 50px 就加白底
+        if (currentScroll > 10) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+
+        // 判斷滑動方向
+        if (currentScroll > lastScroll && currentScroll > 10) {
+          // 向下滑而且超過 100px → 隱藏
+          navbar.classList.add("hide");
+        } else {
+          // 向上滑 → 顯示
+          navbar.classList.remove("hide");
+        }
+
+        lastScroll = currentScroll;
+      });
+      // 漢堡選單
       document.addEventListener("DOMContentLoaded", () => {
         const hamburger = document.querySelector(".hamburger");
         const fullMenu = document.getElementById("fullMenu");
         const closeBtn = document.getElementById("closeMenu");
 
-        function openMenu() {
+        hamburger.addEventListener("click", () => {
           fullMenu.classList.add("active");
-          document.body.classList.add("no-scroll");
-        }
-
-        function closeMenu() {
+        });
+        closeBtn.addEventListener("click", () => {
           fullMenu.classList.remove("active");
-          document.body.classList.remove("no-scroll");
-        }
-
-        hamburger.addEventListener("click", openMenu);
-        closeBtn.addEventListener("click", closeMenu);
+        });
       });
     </script>
   </body>
