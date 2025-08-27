@@ -256,6 +256,18 @@ body main section.background-img div.filter {
   width: 30vw;
   padding-bottom: 150px;
   padding-top: 200px;
+  animation: breathe 6s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.95;
+  }
 }
 /* 手機（<=600px） */
 @media (max-width: 600px) {
@@ -322,7 +334,7 @@ body main section.background-img h5 {
 
 .room-page {
   background-color: #f7f7f7;
-  height: 100vh;
+  height: 100%;
   position: relative;
   z-index: 1;
   justify-content: center;
@@ -413,7 +425,7 @@ div.room-pic {
 }
 .equipment-page {
   background-color: #ffffff;
-  height: 100vh;
+  height: 100%;
   position: relative;
   z-index: 1;
   justify-content: center;
@@ -851,7 +863,7 @@ body.no-scroll {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./pics/DSC05937.JPG");
+  background-image: url("./pics/roombg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
