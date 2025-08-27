@@ -355,8 +355,8 @@ body main section.background-img h5 {
   font-weight: lighter;
   display: block;
   margin-top: 1rem;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 /* 平板（<=1024px） */
 @media (max-width: 1024px) {
@@ -446,8 +446,8 @@ div.room-pic {
   font-weight: lighter;
   display: block;
   margin-top: 1rem;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 .equipment-page a {
   font-size: 1rem;
