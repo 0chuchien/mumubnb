@@ -257,7 +257,12 @@ body main section.background-img div.filter {
   padding-bottom: 150px;
   padding-top: 200px;
 }
-
+/* 手機（<=600px） */
+@media (max-width: 600px) {
+  .bigname {
+    width: 300px;
+  }
+}
 body main section.background-img h4 {
   color: whitesmoke;
   font-size: 2rem;
