@@ -429,6 +429,7 @@ div.room-pic {
   height: auto; /* ✅ 高度依比例縮放 */
   display: block; /* ✅ 移除 inline 元素底部空隙 */
 }
+
 .equipment-page {
   background-color: #ffffff;
   height: 100%;
@@ -870,6 +871,20 @@ body.no-scroll {
   width: 100%;
   height: 100%;
   background-image: url("./pics/roombg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transform: scale(1.05); /* 模擬視差縮放感 */
+  transition: transform 0.3s ease-out;
+}
+.bigroom-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./pics/stair.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
