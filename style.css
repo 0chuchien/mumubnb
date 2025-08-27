@@ -404,7 +404,11 @@ div.equipment-pic {
   width: 100%;
   margin: 3rem auto;
 }
-
+.equipment-pic img {
+  max-width: 100%; /* ✅ 不會超過容器寬度 */
+  height: auto; /* ✅ 高度依比例縮放 */
+  display: block; /* ✅ 移除 inline 元素底部空隙 */
+}
 .traffic-page {
   background-color: #f7f7f7;
   height: 90vh;
