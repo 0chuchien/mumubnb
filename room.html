@@ -497,31 +497,37 @@
     </script>
     
     <script>
-     let lastScroll = 0;
+    let lastScroll = 0;
       const navbar = document.querySelector(".navbar");
 
       window.addEventListener("scroll", () => {
         const currentScroll = window.scrollY;
+        const isMobile = window.innerWidth < 768; // 判斷是否手機寬度
 
-        // 捲動超過 50px 就加白底
+        if (isMobile) {
+          // 手機模式：固定白底、不隱藏
+          navbar.classList.add("scrolled");
+          navbar.classList.remove("hide");
+          return; // 直接結束，不跑下面
+        }
+
+        // 桌機模式
         if (currentScroll > 10) {
           navbar.classList.add("scrolled");
         } else {
           navbar.classList.remove("scrolled");
         }
 
-        // 判斷滑動方向
         if (currentScroll > lastScroll && currentScroll > 10) {
-          // 向下滑而且超過 100px → 隱藏
+          // 向下滑
           navbar.classList.add("hide");
         } else {
-          // 向上滑 → 顯示
+          // 向上滑
           navbar.classList.remove("hide");
         }
 
         lastScroll = currentScroll;
       });
-    
       // 漢堡選單
       document.addEventListener("DOMContentLoaded", () => {
         const hamburger = document.querySelector(".hamburger");

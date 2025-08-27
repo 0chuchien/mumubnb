@@ -47,9 +47,15 @@
           坐落於宜蘭冬山河畔，讓您遠離都市喧嚣，盡享大自然的靜謐與美好。清晨喚醒您的，是河畔微風與鳥鳴，傍晚則有夕陽染紅水面，帶來寧靜祥和的氛圍。無論是親子同遊還是好友小聚，我們提供溫馨舒適的住宿空間，讓您感受宜蘭的純淨與悠閒。也是探索冬山鄉美景的最佳起點。期待在這片自然懷抱中，與您共創美好回憶。
         </h5>
       </section>
-      <section>
+      <section class="news">
         <h3>最新消息</h3>
+        <div class="news-flash">
+          <h4>新開幕！</h4>
+          <h4>開放預訂，歡迎加入官方LINE詢問！</h4>
+          <h4>更多最新資訊請見Instagram!</h4>
+        </div>
       </section>
+
       <section class="room-page">
         <h3>房型介紹</h3>
         <h4>
@@ -131,20 +137,27 @@
 
       window.addEventListener("scroll", () => {
         const currentScroll = window.scrollY;
+        const isMobile = window.innerWidth < 768; // 判斷是否手機寬度
 
-        // 捲動超過 50px 就加白底
+        if (isMobile) {
+          // 手機模式：固定白底、不隱藏
+          navbar.classList.add("scrolled");
+          navbar.classList.remove("hide");
+          return; // 直接結束，不跑下面
+        }
+
+        // 桌機模式
         if (currentScroll > 10) {
           navbar.classList.add("scrolled");
         } else {
           navbar.classList.remove("scrolled");
         }
 
-        // 判斷滑動方向
         if (currentScroll > lastScroll && currentScroll > 10) {
-          // 向下滑而且超過 100px → 隱藏
+          // 向下滑
           navbar.classList.add("hide");
         } else {
-          // 向上滑 → 顯示
+          // 向上滑
           navbar.classList.remove("hide");
         }
 

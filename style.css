@@ -262,6 +262,7 @@ body main section.background-img h4 {
   text-align: center;
   font-weight: lighter;
   display: block;
+  transition: font-size 0.4s ease; /* 加上滑順效果 */
 }
 
 body main section.background-img h1 {
@@ -271,6 +272,7 @@ body main section.background-img h1 {
   font-weight: lighter;
   display: block;
   margin-top: 18rem;
+  transition: font-size 0.4s ease;
 }
 
 body main section.background-img h5 {
@@ -282,6 +284,33 @@ body main section.background-img h5 {
   margin-top: 25rem;
   margin-left: 20%;
   margin-right: 20%;
+  transition: font-size 0.4s ease;
+}
+
+/* 平板（<=1024px） */
+@media (max-width: 1024px) {
+  body main section.background-img h4 {
+    font-size: 1.2rem;
+  }
+  body main section.background-img h1 {
+    font-size: 2.5rem;
+  }
+  body main section.background-img h5 {
+    font-size: 1.05rem;
+  }
+}
+
+/* 手機（<=600px） */
+@media (max-width: 600px) {
+  body main section.background-img h4 {
+    font-size: 1rem;
+  }
+  body main section.background-img h1 {
+    font-size: 2rem;
+  }
+  body main section.background-img h5 {
+    font-size: 0.9rem;
+  }
 }
 
 .room-page {
@@ -1131,4 +1160,54 @@ input {
   padding: 10px;
   font-size: 16px;
   width: 250px;
+}
+.news {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 40px 20px;
+  text-align: center;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.news h3 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.news-flash h4 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin: 10px 0;
+}
+
+/* 閃動效果 */
+.flash {
+  animation: colorFlash 3s infinite;
+}
+
+/* 三行交錯延遲，製造閃動輪流感 */
+.flash:nth-child(1) {
+  animation-delay: 0s;
+}
+.flash:nth-child(2) {
+  animation-delay: 1s;
+}
+.flash:nth-child(3) {
+  animation-delay: 2s;
+}
+
+@keyframes colorFlash {
+  0%,
+  100% {
+    color: #111;
+  } /* 深色（顯眼） */
+  50% {
+    color: #bbb;
+  } /* 淡色（變弱） */
 }
