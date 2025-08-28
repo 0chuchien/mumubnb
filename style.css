@@ -884,7 +884,7 @@ body.no-scroll {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./pics/door.jpg");
+  background-image: url("./pics/sofa.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -968,6 +968,12 @@ body.no-scroll {
   font-weight: normal;
   position: relative;
   transition: all 0.3s ease;
+}
+/* 手機模式 (小於 768px) 時字體縮小 */
+@media screen and (max-width: 768px) {
+  .room-nav li a {
+    font-size: 0.875rem; /* 或 14px */
+  }
 }
 
 .room-nav li.active a {
