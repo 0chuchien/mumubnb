@@ -972,7 +972,7 @@ body.no-scroll {
 /* 手機模式 (小於 768px) 時字體縮小 */
 @media screen and (max-width: 768px) {
   .room-nav li a {
-    font-size: 0.875rem; /* 或 14px */
+    font-size: 0.7rem; /* 或 14px */
   }
 }
 
