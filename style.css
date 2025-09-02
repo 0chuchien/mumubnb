@@ -1312,3 +1312,112 @@ input {
     color: #bbb;
   } /* 淡色（變弱） */
 }
+/* 包裹區塊置中 */
+.book-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 水平置中 */
+  justify-content: center; /* 垂直置中（如果需要） */
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 標題 */
+.book-wrapper h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* 說明區塊 */
+.calendar-legend {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 小圓點 */
+.calendar-legend .dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background-color: rgb(235, 107, 107); /* 已預訂標記 */
+}
+/* 整體樣式 */
+.flatpickr-calendar {
+  border: 1px solid #ccc;
+  border-radius: 16px;
+
+  font-size: 16px;
+}
+
+/* 標題（年月切換） */
+/* Header 區塊 */
+.flatpickr-months {
+  display: flex;
+  justify-content: flex-end; /* 靠右 */
+  background: #e8e8e8;
+
+  padding: 8px 12px;
+  color: #fff;
+}
+
+/* 年月顯示 */
+.flatpickr-current-month {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  order: 2; /* 放在箭頭後面 */
+  margin-left: 8px;
+}
+
+/* 左右箭頭 */
+.flatpickr-prev-month,
+.flatpickr-next-month {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  order: 1; /* 放在最前面 */
+  margin: 0 4px;
+  transition: transform 0.2s;
+}
+.flatpickr-prev-month:hover,
+.flatpickr-next-month:hover {
+  transform: scale(1.2);
+}
+
+/* 星期列 */
+.flatpickr-weekdays {
+  background: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+  font-weight: normal;
+}
+
+/* 日期格子 */
+.flatpickr-day {
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+/* hover 效果 */
+.flatpickr-day:hover {
+  background: #dbeafe;
+}
+
+/* 已選中 */
+.flatpickr-day.selected {
+  background: #777777;
+  color: #fff;
+}
+
+/* 已預訂（客製 class，等你加上去） */
+.flatpickr-day.booked {
+  background: #f8717128 !important;
+  color: #000000;
+  cursor: not-allowed;
+}

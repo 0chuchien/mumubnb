@@ -99,6 +99,14 @@
           >加入 LINE 預訂</a
         >
       </section>
+      <!-- ==== 預訂狀況月曆（放在包棟費用與說明的最下方）==== -->
+      <div id="booking-calendar-wrapper" class="book-wrapper">
+        <h3>訂房狀況</h3>
+        <div id="reservation-calendar" class="calendar"></div>
+        <div class="calendar-legend">
+          <span class="dot"></span> 表示已經被預訂
+        </div>
+      </div>
     </div>
 
     <footer class="site-footer">
@@ -167,6 +175,66 @@
         closeBtn.addEventListener("click", () => {
           fullMenu.classList.remove("active");
         });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh-tw.js"></script>
+
+    <script>
+      function ymd(d) {
+        return (
+          d.getFullYear() +
+          "-" +
+          String(d.getMonth() + 1).padStart(2, "0") +
+          "-" +
+          String(d.getDate()).padStart(2, "0")
+        );
+      }
+
+      let reservedDates = [];
+
+      function fetchReservedJson(fpInstance) {
+        return fetch("./reserved.json?_t=" + Date.now())
+          .then((r) => {
+            if (!r.ok) throw new Error("讀取 reserved.json 失敗");
+            return r.json();
+          })
+          .then((data) => {
+            reservedDates = data;
+            fpInstance.set("disable", reservedDates);
+            fpInstance.redraw();
+            fpInstance.buildDays(); // 🔑 強制刷新日期
+          })
+          .catch((err) => console.error("載入 reserved.json 失敗：", err));
+      }
+
+      const fp = flatpickr("#reservation-calendar", {
+        inline: true,
+        static: true,
+        clickOpens: false,
+        locale: flatpickr.l10ns["zh_tw"],
+        minDate: "today",
+        dateFormat: "Y-m-d",
+        monthSelectorType: "static",
+        disable: [],
+        onReady: function (sel, str, instance) {
+          fetchReservedJson(instance);
+        },
+        onMonthChange: function (sel, str, instance) {
+          fetchReservedJson(instance);
+        },
+        onYearChange: function (sel, str, instance) {
+          fetchReservedJson(instance);
+        },
+        onDayCreate: function (dObj, dStr, fpInstance, dayElem) {
+          const ds = ymd(dayElem.dateObj);
+          if (reservedDates.includes(ds)) {
+            dayElem.classList.add("booked");
+            const dot = document.createElement("span");
+            dot.className = "fp-booked-dot";
+            dayElem.appendChild(dot);
+          }
+        },
       });
     </script>
   </body>
