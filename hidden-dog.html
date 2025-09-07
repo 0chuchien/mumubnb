@@ -9,20 +9,24 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="icon" href="favicon.png" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- GSAP 核心 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- GSAP Observer 插件 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Observer.min.js"></script>
   </head>
   <body>
     <div class="intro">
       <img id="logo" src="./pics/logo小.svg" alt="木木民宿 Logo" />
     </div>
 
-    <nav class="navbar">
+    <nav class="navbar scrolled white-default">
       <div class="logo2">
         <a href="./index.html"> <img src="./pics/logo小.svg" alt="logo" /></a>
       </div>
       <ul class="nav-links">
         <li><a href="./index.html">首頁</a></li>
         <li><a href="./room.html">空間介紹</a></li>
-        <li><a class="active" href="#">設施總覽</a></li>
+        <li><a href="./equipment.html">設施總覽</a></li>
         <li><a href="./index.html#traffic123">交通與週邊</a></li>
         <div class="line"></div>
         <li><a href="./notice.html">訂房須知</a></li>
@@ -42,71 +46,20 @@
         <li><a href="./book.html">預訂/價格</a></li>
       </ul>
     </div>
-    <section class="room1">
-      <div class="bigroom-bg"></div>
-      <div class="room-content">
-        <h3 id="info">設施總覽</h3>
-        <h4>
-          提供舒適完善的設備，讓您自在享受每段旅程。每一刻都能感受到簡單而剛好的生活氛圍。
-        </h4>
+    <div class="carousel">
+      <div class="carousel-image">
+        <img src="./pics/IMG_7779.PNG" alt="" />
       </div>
-    </section>
-
-    <section class="equipment-category">
-      <h3>客房設施</h3>
-      <ul>
-        <li>TOTO 免治馬桶</li>
-        <li>TOTO 暖房乾燥空調設備</li>
-        <li>Dyson 吹風機</li>
-        <li>浴缸</li>
-        <li>獨立陽台</li>
-      </ul>
-    </section>
-
-    <section class="equipment-category">
-      <h3>開放式廚房</h3>
-      <ul>
-        <li>IH爐（2口）</li>
-        <li>冰溫熱飲水機（含氣泡水）</li>
-        <li>冰箱</li>
-        <li>蒸烤爐</li>
-        <li>氣炸鍋</li>
-        <li>電子鍋</li>
-        <li>洗碗機</li>
-        <li>烘碗機</li>
-      </ul>
-    </section>
-
-    <section class="equipment-category">
-      <h3>室內交誼空間</h3>
-      <ul>
-        <li>影音設備</li>
-        <li>桌球桌</li>
-        <li>自動麻將桌</li>
-        <li>大片落地窗與寬敞空間</li>
-      </ul>
-    </section>
-
-    <section class="equipment-category">
-      <h3>餐客廳</h3>
-      <ul>
-        <li>大餐桌</li>
-        <li>沙發區</li>
-        <li>電視</li>
-        <li>大片落地窗景觀</li>
-      </ul>
-    </section>
-
-    <section class="equipment-category">
-      <h3>戶外設施</h3>
-      <ul>
-        <li>草坪區</li>
-        <li>烤肉區</li>
-        <li>停車場</li>
-        <li>CCS2 電動車充電樁</li>
-      </ul>
-    </section>
-
+      <div class="carousel-image">
+        <img src="./pics/IMG_7780.PNG" alt="" />
+      </div>
+      <div class="carousel-image"><img src="./pics/IMG_7787.PNG" alt="" /></div>
+      <div class="carousel-image"><img src="./pics/IMG_7784.PNG" alt="" /></div>
+      <div class="carousel-image"><img src="./pics/IMG_7785.PNG" alt="" /></div>
+      <div class="carousel-image"><img src="./pics/IMG_7786.PNG" alt="" /></div>
+      <div class="carousel-image"><img src="./pics/IMG_7781.PNG" alt="" /></div>
+      <div class="carousel-image"><img src="./pics/IMG_7788.PNG" alt="" /></div>
+    </div>
     <footer class="site-footer">
       <div class="footer-content">
         <img class="smalllogo" src="./pics/logo小.svg" alt="logo" />
@@ -149,8 +102,6 @@
         // 桌機模式
         if (currentScroll > 10) {
           navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
         }
 
         if (currentScroll > lastScroll && currentScroll > 10) {
@@ -178,22 +129,48 @@
       });
     </script>
     <script>
-      let clickCount = 0;
-      let clickTimer;
+      const images = document.querySelectorAll(".carousel-image");
+      const radius = 300;
+      const progress = {
+        value: 0,
+      };
+      const carousel = document.querySelector(".carousel");
 
-      document.getElementById("info").addEventListener("click", function () {
-        clickCount++;
-        clearTimeout(clickTimer);
-
-        // 超過 1 秒沒繼續點就重置
-        clickTimer = setTimeout(() => {
-          clickCount = 0;
-        }, 1000);
-
-        if (clickCount === 7) {
-          window.location.href = "secret-info.html"; // 連點七下後跳轉
-        }
+      Observer.create({
+        target: carousel,
+        type: "wheel,pointer",
+        onPress: (self) => {
+          carousel.style.cursor = "grabbing";
+        },
+        onRelease: (self) => {
+          carousel.style.cursor = "grab";
+        },
+        onChange: (self) => {
+          gsap.killTweensOf(progress);
+          const p =
+            self.event.type === "wheel"
+              ? self.deltaY * -0.0005
+              : self.deltaX * 0.05;
+          gsap.to(progress, {
+            duration: 2,
+            ease: "power4.out",
+            value: `+=${p}`,
+          });
+        },
       });
+
+      const animate = () => {
+        images.forEach((image, index) => {
+          const theta = index / images.length - progress.value;
+          const x = -Math.sin(theta * Math.PI * 2) * radius;
+          const y = Math.cos(theta * Math.PI * 2) * radius;
+          image.style.transform = `translate3d(${x}px, 0px, ${y}px) rotateY(${
+            360 * -theta
+          }deg)`;
+          const c = Math.floor((index / images.length) * 360);
+        });
+      };
+      gsap.ticker.add(animate);
     </script>
   </body>
 </html>
