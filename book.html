@@ -18,6 +18,62 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh.js"></script>
     <!-- JS 主程式 -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <style>
+      body {
+        font-family: "Noto Sans TC", sans-serif;
+        line-height: 1.8;
+        background: #fafafa;
+        color: #333;
+        padding: 20px;
+      }
+      h1,
+      h2 {
+        text-align: center;
+        color: #444;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px auto;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      table th,
+      table td {
+        border: 1px solid #ddd;
+        padding: 14px;
+        text-align: center;
+      }
+      table th {
+        background: #f5f5f5;
+        font-weight: bold;
+      }
+      table tr:nth-child(even) {
+        background: #fafafa;
+      }
+      .highlight {
+        color: #b44;
+        font-weight: bold;
+      }
+      .note {
+        max-width: 800px;
+        margin: 30px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+      .note h3 {
+        margin-top: 0;
+        color: #555;
+      }
+      ul {
+        margin: 10px 0 0 20px;
+      }
+    </style>
   </head>
   <body>
     <div class="intro">
@@ -55,47 +111,94 @@
     <div class="container">
       <section class="section">
         <h1>包棟費用與說明</h1>
-        <table class="price-table">
+        <table>
           <thead>
             <tr>
-              <th>專案</th>
-              <th>平日<br /><small>（週一～週四）</small></th>
-              <th>旺日<br /><small>（週五、週日）</small></th>
-              <th>假日<br /><small>（週六、暑假、國定假日）</small></th>
-              <th>定價<br /><small>（春節、跨年）</small></th>
+              <th>入住人數</th>
+
+              <th>平日<br />(週一～週四)</th>
+              <th>旺日<br />(週五、週日)</th>
+              <th>假日<br />(週六、國定假日)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>標準包棟 <small>（16人）</small></td>
-              <td>26,800</td>
-              <td>30,800</td>
-              <td>33,800</td>
-              <td>66,800</td>
+              <td>4人</td>
+
+              <td>9,600</td>
+
+              <td>10,800</td>
+
+              <td>---</td>
             </tr>
             <tr>
-              <td>12人包棟 <small>（12～9人）</small></td>
-              <td>23,800</td>
-              <td>27,800</td>
-              <td>30,800</td>
-              <td>62,800</td>
+              <td>6 人</td>
+
+              <td>10,600</td>
+
+              <td>10,800</td>
+
+              <td>---</td>
             </tr>
             <tr>
-              <td>8人包棟 <small>（8人以下）</small></td>
+              <td>8 人</td>
+
+              <td>13,800</td>
+
+              <td>14,400</td>
+
+              <td>16,000</td>
+            </tr>
+            <tr>
+              <td>10 人</td>
+
+              <td>16,800</td>
+
+              <td>18,800</td>
+
               <td>19,800</td>
+            </tr>
+            <tr>
+              <td>12 人</td>
+
+              <td>19,800</td>
+
+              <td>21,600</td>
+
               <td>23,800</td>
-              <td>26,800</td>
-              <td>58,800</td>
+            </tr>
+
+            <tr>
+              <td>16 人</td>
+
+              <td>25,800</td>
+
+              <td>27,200</td>
+
+              <td>30,400</td>
             </tr>
           </tbody>
         </table>
 
+        <div class="note">
+          <ul>
+            <li>
+              <b>計價方式</b
+              >：依實際入住人數計算，價格為整棟計價，不接受加床或加人。
+            </li>
+
+            <li>
+              <b>房型配置</b>：2 間雙人房 + 3 間四人房（最多 16
+              人），依人數開放房間。
+            </li>
+          </ul>
+        </div>
         <div class="price-note">
-          <h3>1.連續入住第 2 晚 9 折，第 3 晚起 85 折。</h3>
+          <h3>1.跨年、春節價格一律為36,800。</h3>
 
           <h3>2.跨年、春節須全額付款。</h3>
           <h3>
-            3.另提供平日8人以下<strong>連住</strong>小包棟優惠，若有需求歡迎洽詢LINE官方客服。
+            3.另提供<strong>連住</strong>優惠，若有需求歡迎洽詢LINE官方客服。
           </h3>
           <br />
           <p>*無提供加床服務</p>
