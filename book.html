@@ -28,7 +28,8 @@
         padding: 20px;
       }
       h1,
-      h2 {
+      h2,
+      h4 {
         text-align: center;
         color: #444;
       }
@@ -73,6 +74,29 @@
       ul {
         margin: 10px 0 0 20px;
       }
+      /* 房型欄（分類） */
+      table thead th:first-child,
+      table tbody td:first-child {
+        background: #f3f3f3;
+        color: #333;
+        font-weight: 600;
+      }
+
+      /* 價格 */
+      table td b {
+        color: #111;
+      }
+
+      /* 人數 */
+      table td small {
+        color: #888;
+      }
+      .price-ps {
+        margin-top: 0.6rem;
+        font-size: 0.85rem;
+        color: #666;
+        text-align: end;
+      }
     </style>
   </head>
   <body>
@@ -111,79 +135,112 @@
     <div class="container">
       <section class="section">
         <h1>包棟費用與說明</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>入住人數</th>
 
-              <th>平日<br />(週一～週四)</th>
-              <th>旺日<br />(週五、週日)</th>
-              <th>假日<br />(週六、國定假日、連續假日、寒暑假)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>4人</td>
+        <section class="section">
+          <h4>
+            本表以「房間組合」計價，請依實際人數及需求選擇房型配置，若有特殊情況可與客服人員確認。
+          </h4>
+          <table>
+            <thead>
+              <tr>
+                <th>房型配置</th>
+                <th>雙人房 0 間</th>
+                <th>雙人房 1 間</th>
+                <th>雙人房 2 間</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>四人房 1 間</td>
+                <td>—</td>
+                <td>
+                  <b>15,800</b><br />
+                  <small>（最多 6 人）</small>
+                </td>
+                <td>
+                  <b>18,700</b><br />
+                  <small>（最多 8 人）</small>
+                </td>
+              </tr>
 
-              <td>14,200</td>
+              <tr>
+                <td>四人房 2 間</td>
+                <td>
+                  <b>16,700</b><br />
+                  <small>（最多 8 人）</small>
+                </td>
+                <td>
+                  <b>21,800</b><br />
+                  <small>（最多 10 人）</small>
+                </td>
+                <td>
+                  <b>26,400</b><br />
+                  <small>（最多 12 人）</small>
+                </td>
+              </tr>
 
-              <td>15,300</td>
-
-              <td>---</td>
-            </tr>
-
-            <tr>
-              <td>8 人</td>
-
-              <td>15,300</td>
-
-              <td>16,000</td>
-
-              <td>18,700</td>
-            </tr>
-
-            <tr>
-              <td>12 人</td>
-
-              <td>22,800</td>
-
-              <td>24,000</td>
-
-              <td>26,400</td>
-            </tr>
-
-            <tr>
-              <td>16 人</td>
-
-              <td>28,700</td>
-
-              <td>30,200</td>
-
-              <td>33,800</td>
-            </tr>
-          </tbody>
-        </table>
+              <tr>
+                <td>四人房 3 間</td>
+                <td>
+                  <b>24,800</b><br />
+                  <small>（最多 12 人）</small>
+                </td>
+                <td>
+                  <b>31,800</b><br />
+                  <small>（最多 14 人）</small>
+                </td>
+                <td>
+                  <b>33,800</b><br />
+                  <small>（最多 16 人）</small>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <p class="price-ps">
+          ※ 以上價格為<strong>假日價格</strong>，平日與旺日之價格說明請見下方。
+        </p>
 
         <div class="note">
-          <ul>
+          <ul class="price-rules">
             <li>
-              <b>計價方式與房型配置</b>：本館採整棟計價，依實際需求開放房間（2
-              間雙人房 + 3 間四人房，最多 16
-              人），不接受加床或額外加人。房費以「整房」計算，例如: 9
-              人入住，即以 12 人方案計價並提供2間雙人房 + 2 間四人房或 3
-              間四人房。(可以與客服人員討論房間數安排細節)
+              <b>計價方式</b><br />
+              本館採 <b>包棟計價</b>，依實際入住人數開放房間。 全館共
+              <b>2 間雙人房＋3 間四人房</b>，最多入住 <b>16 人</b>，
+              不提供加床或額外加人。
+            </li>
+
+            <li>
+              <b>房型配置說明</b><br />
+              房間將依入住人數安排開放，實際房型配置
+              可於訂房時與客服人員討論確認。
+            </li>
+
+            <li>
+              <b>平假日價格說明</b><br />
+              以上表格為 <b>假日價格</b>。<br />
+              假日（週六、國定假日、連續假日、寒暑假）：依表定價格計算<br />
+              旺日（週五、週日）：假日價 <b>9 折</b><br />
+              平日（週一～週四）：假日價 <b>8 折</b>
+            </li>
+
+            <li>
+              <b>房間數需求提醒</b><br />
+              實際入住人數 <b>不可高於建議房型配置</b>，
+              本館將依人數安排開放房間數。<br />
+              如有指定房間數需求（例如 8 人希望開放 4 間房），
+              視爲提高房型配置，須 <b>另行加價</b>， 並請於訂房時事先告知。
             </li>
           </ul>
         </div>
+
         <div class="price-note">
-          <h3>1.跨年、春節價格洽LINE官方客服</h3>
-          <h3>2.跨年、春節須全額付款。</h3>
-          <h3>
-            3.另提供<strong>連住</strong>優惠，若有需求歡迎洽詢LINE官方客服。
-          </h3>
+          <h3>1. 跨年、春節價格請洽 LINE 官方客服</h3>
+          <h3>2. 跨年、春節期間須全額付款</h3>
+          <h3>3. 另提供 <strong>連住優惠</strong>，歡迎洽詢 LINE 官方客服</h3>
           <br />
-          <p>*無提供加床服務</p>
-          <p>*續住不提供更換床包、毛巾等房務清潔。</p>
+          <p>* 無提供加床服務</p>
+          <p>* 續住期間不提供更換床包、毛巾等房務清潔</p>
         </div>
       </section>
 
