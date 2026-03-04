@@ -1465,7 +1465,3 @@ input {
     transform: rotateX(-10deg) scale(0.6) translateY(-60px);
   }
 }
-table tbody td:first-child,
-table thead th:first-child {
-  font-weight: 600;
-}
