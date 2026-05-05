@@ -1167,7 +1167,7 @@ header h1 {
 }
 .container {
   max-width: 800px;
-  margin: 100px auto;
+  margin: 100px auto 30px auto;
   padding: 1rem;
 }
 .section {
@@ -1189,7 +1189,9 @@ header h1 {
   margin: 1rem 0;
 }
 .button {
-  display: inline-block;
+  display: block;
+  width: fit-content;
+  margin: 16px auto; /* 上下留距離＋水平置中 */
   padding: 0.6rem 1.2rem;
   background-color: #06c755;
   color: white;
@@ -1224,7 +1226,6 @@ header h1 {
   font-family: Arial, sans-serif;
   font-size: 14px;
   text-align: center;
-  border: 1px solid #ccc;
 }
 
 .price-table thead {
@@ -1243,7 +1244,8 @@ header h1 {
 }
 
 .price-note {
-  margin-top: 1rem;
+  margin: 30px auto;
+  max-width: 800px;
   font-size: 13px;
   line-height: 1.6;
   color: #444;

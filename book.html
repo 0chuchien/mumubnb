@@ -102,6 +102,35 @@
         color: #666;
         white-space: nowrap;
       }
+      .price-table {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        text-align: center;
+      }
+
+      .price-item {
+        padding: 20px;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        background: #fff;
+      }
+
+      .price-item h3 {
+        margin-bottom: 8px;
+      }
+
+      .price {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .price-note {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
     </style>
   </head>
   <body>
@@ -141,7 +170,7 @@
       <section class="section">
         <h1>包棟費用與說明</h1>
 
-        <section class="section">
+        <!-- <section class="section">
           <h4>
             本表以「房間組合」計價，請依實際人數及需求選擇房型配置，若有特殊情況可與客服人員確認。
           </h4>
@@ -261,6 +290,83 @@
           target="_blank"
           >加入 LINE 預訂</a
         >
+      </section> -->
+        <section class="section">
+          <h4>
+            本表以「房間數量」計價，請依實際需求選擇房型配置，若有特殊情況可與客服人員確認。
+          </h4><div class="price-table">
+            <div class="price-item">
+              <h3>標準包棟</h3>
+              <p>5房 16人內</p>
+              <p class="price">＄30,800 / 晚</p>
+            </div>
+    
+            <div class="price-item">
+              <h3>彈性包棟</h3>
+              <p>任選4房 14人內</p>
+              <p class="price">＄23,800 / 晚</p>
+            </div>
+    
+            <div class="price-item">
+              <h3>小包棟</h3>
+              <p>任選3房 12人內</p>
+              <p class="price">＄17,800 / 晚</p>
+            </div>
+            
+          </div>
+          <div><p class="price-ps">
+            ※ 以上價格為<strong>假日價格</strong>，平日與旺日之價格說明請見下方
+          </p>
+          <p class="price-ps" style="color: rgb(162, 33, 33)">
+            ※ <strong>常有優惠請洽官方line</strong>
+          </p></div>
+          
+        </div>
+    
+        </section>
+        
+
+        <div class="note">
+          <ul class="price-rules">
+            <li>
+              <b>計價方式</b><br />
+              本館採 <b>包棟計價</b>，依實際入住人數開放房間。 全館共
+              <b>2 間雙人房＋3 間四人房</b>，最多入住 <b>16 人</b>，
+              不提供加床或額外加人。
+            </li>
+
+            <li>
+              <b>房型配置說明</b><br />
+              房間將依入住人數安排開放，實際房型配置
+              可於訂房時與客服人員討論確認。
+            </li>
+
+            <li>
+              <b>平假日價格說明</b><br />
+              以上表格為 <b>假日價格</b>。<br />
+              假日（週六、國定假日、連續假日、寒暑假）：依表定價格計算<br />
+              旺日（週五、週日）：假日價 <b>9 折</b><br />
+              平日（週一～週四）：假日價 <b>8 折</b>
+            </li>
+
+            <li>
+              <b>房間數需求提醒</b><br />
+              實際入住人數 <b>不可高於建議房型配置</b>，
+              本館將依人數安排開放房間數。<br />
+              如有指定房間數需求（例如 8 人希望開放 4 間房），
+              視爲提高房型配置，須 <b>另行加價</b>， 並請於訂房時事先告知。
+            </li>
+          </ul>
+        </div>
+
+        <div class="price-note">
+          <h3>1. 跨年、春節價格請洽 LINE 官方客服</h3>
+          <h3>2. 跨年、春節期間須全額付款</h3>
+          <h3>3. 另提供 <strong>連住優惠</strong>，歡迎洽詢 LINE 官方客服</h3>
+          <br />
+          <p>* 無提供加床服務</p>
+          <p>* 續住期間不提供更換床包、毛巾等房務清潔</p>
+        </div>
       </section>
       <!-- ==== 預訂狀況月曆（放在包棟費用與說明的最下方）==== -->
       <div id="booking-calendar-wrapper" class="book-wrapper">
@@ -270,8 +376,19 @@
           <span class="dot"></span> 表示已經被預訂
         </div>
       </div>
-    </div>
 
+      <section class="section">
+        <h2>請使用 LINE 官方帳號預訂</h2>
+
+        <a
+          href="https://line.me/R/ti/p/@160ajblq?ts=07211633&oat_content=url"
+          class="button"
+          target="_blank"
+          >加入 LINE 預訂</a
+        >
+      </section>
+      
+      
     <footer class="site-footer">
       <div class="footer-content">
         <img class="smalllogo" src="./pics/logo小.svg" alt="logo" />
