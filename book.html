@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MUMU 丨 木木民宿</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
 
     <link rel="icon" href="favicon.png" />
     <link rel="stylesheet" href="./style.css" />
@@ -130,6 +130,11 @@
   justify-content: center;
   flex-direction: column;
   gap: 8px;
+}
+@media (max-width: 768px) {
+  .price-table {
+    grid-template-columns: 1fr;
+  }
 }
     </style>
   </head>
@@ -321,7 +326,7 @@
             ※ <strong>常有優惠請洽官方line</strong>
           </p></div>
           
-        </div>
+       
     
         </section>
         
@@ -367,7 +372,7 @@
           <p>* 無提供加床服務</p>
           <p>* 續住期間不提供更換床包、毛巾等房務清潔</p>
         </div>
-      </section>
+     
       <!-- ==== 預訂狀況月曆（放在包棟費用與說明的最下方）==== -->
       <div id="booking-calendar-wrapper" class="book-wrapper">
         <h3>訂房狀況</h3>
